@@ -40,13 +40,13 @@ void AnimalListModel::addAminal(QString name, QString color)
 
 void AnimalListModel::removeAnimal(int index)
 {
-    beginRemoveRows(QModelIndex(), index, index);
     if(mListAnimals.count() > index && index >= 0){
+        beginRemoveRows(QModelIndex(), index, index);
         Animal *pAnimal = mListAnimals.at(index);
         mListAnimals.removeAt(index);
         delete pAnimal;
+        endRemoveRows();
     }
-    endRemoveRows();
 }
 
 void AnimalListModel::removeAnimal()

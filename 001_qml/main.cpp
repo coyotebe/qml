@@ -117,6 +117,8 @@ int main(int argc, char *argv[])
 
     QQuickView qview;
 
+
+    // Make and set model
     AnimalListModel animalModel;
     animalModel.addAminal(new Animal("Duck", "red"));
     animalModel.addAminal(new Animal("Turnel", "blue"));

@@ -18,9 +18,10 @@ Rectangle{
     // List view show data
     ListView{
         id: listView
-        width: 320; height: 48
+        width: 320; height: 480
         anchors.centerIn: parent
         model: mModel
+        spacing: 3
         delegate: Rectangle{
             width: 160; height: 30
             border.width: 2
@@ -30,25 +31,24 @@ Rectangle{
                 anchors.centerIn: parent
                 text: mName
                 color: mColor
-            }
+            }            
         }
     }
 
     // Button for click
+    Image {
+        id: imgButton
+        source: "qrc:/update_progress_track.png"
+        width: 120; height: 40
+        anchors.bottom: listView.bottom
+        anchors.horizontalCenter: listView.horizontalCenter
+        anchors.bottomMargin: 5
+    }
     Text{
         id: txtAdd
-        width: 120; height: 40
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors.centerIn: imgButton
         color: 'brown'
         text: 'Add new'
-        BorderImage {
-            id: borderimg
-            source: "qrc:/update_progress_track.png"
-            width: 120; height: 40
-            border.left: 5; border.top: 5
-            border.right: 5; border.bottom: 5
-        }
     }
 
     // MouseArea for hander click
