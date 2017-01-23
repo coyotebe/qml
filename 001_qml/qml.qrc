@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Image.qml</file>
+        <file>update_progress_fill.png</file>
+        <file>update_progress_track.png</file>
+        <file>04_1_basicmodel.qml</file>
+    </qresource>
+</RCC>
