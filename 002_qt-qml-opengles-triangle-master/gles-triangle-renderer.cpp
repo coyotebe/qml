@@ -1,7 +1,5 @@
 #include "gles-triangle-renderer.h"
 
-using Qoet::GLESTriangleRenderer;
-
 GLESTriangleRenderer::GLESTriangleRenderer()
 {
 	program = NULL;

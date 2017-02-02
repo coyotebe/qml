@@ -5,8 +5,6 @@
 
 #include "gles-triangle-renderer.h"
 
-namespace Qoet {
-
 class GLESTriangleView : public QQuickItem
 {
 	Q_OBJECT
@@ -34,9 +32,7 @@ private:
 private:
 	QPoint previousPosition; //storing previous mouse position to calculate diff
 	bool isMouseButtonPressed; //rotating only with mouse pressed
-	GLESTriangleRenderer *renderer;
+    GLESTriangleRenderer *renderer;
 };
-
-} //Qoet
 
 #endif // QOETTRIANGLE_H

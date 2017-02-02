@@ -1,15 +1,12 @@
 import QtQuick 2.5
-import QOETDemo 1.0
-
+import GLESTriangleView 1.0
 Item {
 	width: 480
 	height: 320
 
-//	GLESTriangleView {
-//		anchors.fill: parent
-//		focus: true
-//	}
-    RenderWidget{
+    GLESTriangleView {
+        anchors.fill: parent
+        focus: true
     }
 
 	Rectangle {

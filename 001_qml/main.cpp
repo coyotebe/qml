@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
     qview.show();
     return app.exec();
 #endif
-#if(1)
+#if(0)
     /***
      * 04_1 basicmodel in qml
      * ***/
@@ -126,6 +126,14 @@ int main(int argc, char *argv[])
 
     qview.setSource(QUrl("qrc:/04_1_basicmodel.qml"));
     qview.show();
+    return app.exec();
+#endif
+#if(1)
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication app(argc, argv);
+    QQuickView view;
+    view.setSource(QUrl("qrc:/main.qml"));
+    view.show();
     return app.exec();
 #endif
 }

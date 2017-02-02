@@ -3,8 +3,6 @@
 #include <QtQuick/QQuickWindow>
 #include <QDebug>
 
-using Qoet::GLESTriangleView;
-
 GLESTriangleView::GLESTriangleView()
 {
 	renderer = NULL;
@@ -25,7 +23,7 @@ GLESTriangleView::~GLESTriangleView()
 void GLESTriangleView::sync()
 {
 	if (!renderer) {
-		renderer = new Qoet::GLESTriangleRenderer();
+        renderer = new GLESTriangleRenderer();
 		connect(window(), SIGNAL(beforeRendering()), renderer, SLOT(render()), Qt::DirectConnection);
 	}
 	renderer->setViewportSize(window()->size() * window()->devicePixelRatio());

@@ -80,6 +80,7 @@ Item {
     }
 }
 */
+/*
 // 002 Model
 Item{
     id: item
@@ -113,6 +114,34 @@ Item{
                 text: modelData.name
                 color: modelData.color
                 anchors.centerIn: parent
+            }
+        }
+    }
+}
+*/
+
+Item{
+    id: itemId
+    width: 480; height: 720
+    ListModel{
+        id: mModel
+        ListElement{name: "tuenc"; xcolor: "red"}
+        ListElement{name: "tuenc2"; xcolor: "blue"}
+        ListElement{name: "tuenc3"; xcolor: "green"}
+        ListElement{name: "tuenc4"; xcolor: "orange"}
+    }
+    ListView{
+        id: listView
+        width: 320; height: 720
+        anchors.bottom: parent.bottom
+        model: mModel
+        delegate: Rectangle{
+            width: 180; height: 30
+            border.width: 2
+            border.color: xcolor
+            Text{
+                anchors.centerIn: parent
+                text: name
             }
         }
     }

@@ -4,8 +4,6 @@
 #include <QtGui/QOpenGLShaderProgram>
 #include <QtGui/QOpenGLFunctions>
 
-namespace Qoet {
-
 class GLESTriangleRenderer : public QObject, protected QOpenGLFunctions
 {
 	Q_OBJECT
@@ -35,7 +33,4 @@ private:
 	GLfloat vertices[6];
 	GLfloat colors[9]; //vertices' colors
 };
-
-} //Qoet
-
 #endif // QOETRENDERER_H
