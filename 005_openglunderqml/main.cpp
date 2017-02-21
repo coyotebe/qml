@@ -66,6 +66,14 @@ int main(int argc, char **argv)
     view.setSource(QUrl("qrc:///scenegraph/openglunderqml/main.qml"));
     view.show();
 
+    QObject *pObj = view.rootObject()->findChild<QObject*>("listViewName");
+    if(pObj){
+        qDebug() << "Found";
+        QMetaObject::invokeMethod(pObj, "updateListModel", Q_ARG(QVariant, 1), Q_ARG(QVariant, false));
+    }else{
+        qDebug() << "Not found";
+    }
+
     return app.exec();
 }
 //! [1]

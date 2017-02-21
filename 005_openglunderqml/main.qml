@@ -88,5 +88,57 @@ Item {
         anchors.bottom: parent.bottom
         anchors.margins: 20
     }
+    /*
+    Image{
+        anchors.top: parent.top
+        anchors.left: parent.left
+        source: "file:///C:/Users/Public/Pictures/Sample Pictures/Desert.jpg"
+    }
+    */
+    ListView{
+        id: listView
+        objectName: "listViewName"
+        anchors.fill: parent
+        function updateListModel(index, isEnable){
+            listModel.setProperty(index, "isEnable", isEnable);
+            console.log("Called " + index + ", " + isEnable);
+        }
+        model: ListModel{
+            id: listModel
+            ListElement{
+                mName: "Name one"
+                isEnable: true
+            }
+            ListElement{
+                mName: "Name two"
+                isEnable: true
+            }
+            ListElement{
+                mName: "Name three"
+                isEnable: false
+            }
+            ListElement{
+                mName: "Name fourth"
+                isEnable: true
+            }
+        }
+        delegate: Rectangle{
+            width: parent.width
+            height: 70
+            Text {
+                id: textId
+                text: qsTr(mName)
+                color: isEnable ? "#ff0000" : "#ffff00"
+                font.pixelSize: 28
+                anchors.centerIn: parent.Center
+            }
+            MouseArea{
+                anchors.fill: textId
+                onClicked: {
+                    console.log("Name Item: "+ itemName + " Index: " + p_index);
+                }
+            }
+        }
+    }
 }
 //! [2]

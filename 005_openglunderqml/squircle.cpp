@@ -186,15 +186,13 @@ void SquircleRenderer::paint()
     if(isNeedInit){
         initializeOpenGLFunctions();
         isNeedInit = false;
-    }    
-    qDebug() << mCount++ << ", m_window.width:" << m_viewportSize.width()
-             << ", m_window.height:" << m_viewportSize.height();
-    if(mCount > 255)
-        mCount = 0;
+    }
+
+    m_window->resetOpenGLState(); // Necessary in case has some element overlay in this
     glViewport(0, 0, m_viewportSize.width(), m_viewportSize.height());
-    glClearColor(0, mCount/255.0, 0, 1);
+    glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(1.0, 0.0, 0.0);
+    glColor3d(1.0, 0.5, 0.0);
     glBegin(GL_TRIANGLES);
         glVertex2d(0.0, 1.0);
         glVertex2d(0.0, 0.0);
